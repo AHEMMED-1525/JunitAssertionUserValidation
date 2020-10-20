@@ -1,6 +1,7 @@
 package com.sample;
 
 import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class UserValidator {
     private static final String Name_Pattern = "^[A-Z]{1}[a-z0-9]{2,}";
