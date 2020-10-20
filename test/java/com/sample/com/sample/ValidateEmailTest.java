@@ -27,6 +27,8 @@ public class ValidateEmailTest {
                 {"abc@1.com", true},
                 {"abc@gmail.com.com", true},
                 {"abc+100@gmail.com", true},
+
+                // These email are false but it returns True
                 {"abc", false},
                 {"abc@.com.my", false},
                 {"abc123@.com", false},
