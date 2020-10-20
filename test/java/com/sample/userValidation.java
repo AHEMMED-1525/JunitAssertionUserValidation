@@ -51,6 +51,13 @@ public class userValidation {
     // Validation Test for Passsword Atleast One Upper case
 
     @Test
+    public void givenPasswordOneUpperCase_WhenProper_ShouldReturnTrue() {
+        UserValidator passwordValidation = new UserValidator();
+        boolean result = passwordValidation.validatePasswordUpperCase("AhemmedLucky");
+    }
+
+    // Validation Test for password Atleast One Special Character
+    @Test
     public void givenPasswordOneSpecialChar_WhenProper_ShouldReturnTrue() {
         UserValidator passwordValidation = new UserValidator();
         boolean result = passwordValidation.validatePasswordSpecialChar("Ahemmed@Lucky125");
