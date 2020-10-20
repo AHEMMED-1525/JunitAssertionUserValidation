@@ -7,8 +7,10 @@ public class UserValidator {
     private static final String Email_Pattern = "^[A-Za-z0-9+_.]+@[A-Za-z0-9+_.]+$";
     private static final String Mobile_Number = "^[0-9]{2} [0-9]{10}";
     private static final String Password_Pattern = "^[A-Za-z0-9+#!$@]{8,}$";
-    private static final String Password_Pattern_Upper = "^[A-Za-z0-9+#!$@]{8,}$";
+    private static final String Password_Pattern_Upper = "^[A-Za-z]{8,}$";
+    private static final String Password_Pattern_Number="^[A-Za-z0-9]{8,}$";
     private static final String Special_Char = "^(?=.*\\d)(?=.*[A-Z])(?=.*[@#!$%]).{8,20}$";
+
 
 
     public boolean validateFirstName(String fname) {
@@ -45,5 +47,10 @@ public class UserValidator {
     public boolean validatePasswordUpperCase(String pswdUpper) {
         Pattern pattern = Pattern.compile(Password_Pattern_Upper);
         return pattern.matcher(pswdUpper).matches();
+    }
+
+    public boolean validatePasswordNumber(String pswdNum) {
+        Pattern pattern = Pattern.compile(Password_Pattern_Number);
+        return pattern.matcher(pswdNum).matches();
     }
 }
