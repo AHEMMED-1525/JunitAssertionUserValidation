@@ -6,7 +6,8 @@ public class UserValidator {
     private static final String Name_Pattern = "^[A-Z]{1}[a-z0-9]{2,}";
     private static final String Email_Pattern = "^[A-Za-z0-9+_.]+@[A-Za-z0-9+_.]+$";
     private static final String Mobile_Number = "^[0-9]{2} [0-9]{10}";
-    private static final String Password_Pattern = "^[A-Za-z0-9]{8,}$";
+    private static final String Password_Pattern = "^[A-Za-z0-9+#!$@]{8,}$";
+    private static final String Special_Char = "^(?=.*\\d)(?=.*[A-Z])(?=.*[@#!$%]).{8,20}$";
 
     public boolean validateFirstName(String fname) {
         Pattern pattern = Pattern.compile(Name_Pattern);
@@ -31,6 +32,11 @@ public class UserValidator {
 
     public boolean validatePassword(String pswrd) {
         Pattern pattern = Pattern.compile(Password_Pattern);
+        return pattern.matcher(pswrd).matches();
+    }
+
+    public boolean validatePasswordSpecialChar(String pswrd) {
+        Pattern pattern=Pattern.compile(Special_Char);
         return pattern.matcher(pswrd).matches();
     }
 }
