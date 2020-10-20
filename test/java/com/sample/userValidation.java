@@ -29,4 +29,13 @@ public class userValidation {
         boolean result=userValidator.validateEmail("abc@gmail.com");
         Assert.assertEquals(true,result);
     }
+
+    // Validation Test for Mobile Pattern
+
+    @Test
+    public void givenMobileNumber_WhenProper_ReturnTrue() {
+        UserValidator mobilenumvalidator=new UserValidator();
+        boolean result=mobilenumvalidator.validateMobileNumber("91 7730851594");
+        Assert.assertTrue(result);
+    }
 }
