@@ -16,8 +16,8 @@ public class userValidation {
 
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
-        UserValidator userValidator=new UserValidator();
-        boolean result=userValidator.validateLastName("Lucky");
+        UserValidator userValidator = new UserValidator();
+        boolean result = userValidator.validateLastName("Lucky");
         Assert.assertEquals(true,result);
     }
     // Validation Testing for Email Id
@@ -25,8 +25,8 @@ public class userValidation {
 
     @Test
     public void givenEmail_WhenProper_ShouldReturnTrue() {
-        UserValidator userValidator=new UserValidator();
-        boolean result=userValidator.validateEmail("abc@gmail.com");
+        UserValidator userValidator = new UserValidator();
+        boolean result = userValidator.validateEmail("abc@gmail.com");
         Assert.assertEquals(true,result);
     }
 
@@ -34,8 +34,18 @@ public class userValidation {
 
     @Test
     public void givenMobileNumber_WhenProper_ReturnTrue() {
-        UserValidator mobilenumvalidator=new UserValidator();
-        boolean result=mobilenumvalidator.validateMobileNumber("91 7730851594");
+        UserValidator mobilenumvalidator = new UserValidator();
+        boolean result = mobilenumvalidator.validateMobileNumber("91 7730851594");
+        Assert.assertTrue(result);
+    }
+
+    // Validation Test for Password
+
+    @Test
+
+    public void givenPassword_WhenProper_ShouldReturnTrue() {
+        UserValidator passwordValidation = new UserValidator();
+        boolean result = passwordValidation.validatePassword("ahemmedLucky");
         Assert.assertTrue(result);
     }
 }
