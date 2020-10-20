@@ -4,18 +4,21 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class userValidation {
+    // Validation Test for First name
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
         UserValidator userValidator = new UserValidator();
         boolean result = userValidator.validateFirstName("Ahemmed");
         Assert.assertEquals(true,result);
     }
-    // Return false when proper name not given
+
+    //Testing  Last name validation
+
     @Test
-    public void givenFirstName_WhenNotProper_ShouldReturnFalse() {
-        UserValidator userValidator = new UserValidator();
-        boolean result2 = userValidator.validateFirstName("Ah");
-        Assert.assertEquals(false, result2);
+    public void givenLastName_WhenProper_ShouldReturnTrue() {
+        UserValidator userValidator=new UserValidator();
+        boolean result=userValidator.validateLastName("Lucky");
+        Assert.assertEquals(true,result);
     }
 
 }
